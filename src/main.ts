@@ -1,3 +1,5 @@
-// import { sayHello } from "./greet";
+import Sort from './common/sorting';
+
+let anArray:Array<number> = [];
 
 console.log("TypeScript"); 
