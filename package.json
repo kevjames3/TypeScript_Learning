@@ -9,8 +9,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
     "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.2.0",
     "gulp-typescript": "^3.1.3",
-    "typescript": "^2.0.9"
+    "tsify": "^2.0.2",
+    "typescript": "^2.0.9",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "merge2": "^1.0.2"
   }
 }
