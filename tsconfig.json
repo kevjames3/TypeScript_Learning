@@ -1,10 +1,16 @@
 {
     "files": [
-        "src/**.ts"
+        "src/**/*.ts"
     ],
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "sourceMap": true
-    }
+        "sourceMap": true,
+        "preserveConstEnums": true,
+        "outDir": "dest"
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
 }
