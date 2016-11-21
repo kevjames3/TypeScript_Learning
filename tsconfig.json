@@ -5,6 +5,7 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
+        "rootDir": "./src",
         "sourceMap": true,
         "preserveConstEnums": true,
         "outDir": "dest"
