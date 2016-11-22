@@ -7,8 +7,7 @@
         "module": "commonjs",
         "rootDir": "./src",
         "sourceMap": true,
-        "preserveConstEnums": true,
-        "outDir": "dest"
+        "preserveConstEnums": true
     },
     "exclude": [
         "node_modules",
