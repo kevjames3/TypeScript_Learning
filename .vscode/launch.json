@@ -12,6 +12,14 @@
             "cwd": "${workspaceRoot}/src",
             "outFiles": ["${workspaceRoot}/dest/**/*.js"],
             "sourceMaps": true
+        },
+        {
+            "name": "gulp.js File",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "cwd": "${workspaceRoot}",
+            "args": [],
+            "stopOnEntry": true
         }
     ]
 }
