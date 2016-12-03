@@ -10,24 +10,34 @@ export default class Sort {
                 newArray = b;
             } else {
                 for(let i = 0, j = 0; i < a.length || j < b.length;){
-                    let comparison = comparitor(a[i], b[j]);
-                    if(comparison < 0){
-                        newArray.push(b[j]);
+                    if(a[i] == undefined && b[j] != undefined){
+                        newArray.push(b[j])
                         j++;
-                    } else if (comparison == 0){
-                        newArray.push(a[i]);
-                        newArray.push(a[j]);
-                        i++ && j++;
-                    } else { //comparison > 0
+                    } else if (a[i] != undefined && b[j] == undefined){
                         newArray.push(a[i]);
                         i++;
+                    } else if (a[i] == undefined && b[j] == undefined) {
+                        j++; i++;
+                    } else {
+                        let comparison = comparitor(a[i], b[j]);
+                        if(comparison > 0){
+                            newArray.push(b[j]);
+                            j++;
+                        } else if (comparison == 0){
+                            newArray.push(a[i]);
+                            newArray.push(a[j]);
+                            i++ && j++;
+                        } else { //comparison > 0
+                            newArray.push(a[i]);
+                            i++;
+                        }
                     }
                 }
             }
             return newArray;
         }
                 
-        if(input.length == 0){
+        if(input.length <= 1){
             return input;
         }
         let middle = Math.floor(input.length/2);
