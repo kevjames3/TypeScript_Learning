@@ -1,6 +1,34 @@
 /** The comparitor function for sorting */
 type Comparitor<F> = (a: F, b: F) => number;
 export default class Sort {    
+    public static QuickSort<T>(input:T[], comparitor:Comparitor<T>) : T[] {  
+        if(input.length <= 1){
+            return input;
+        }
+        
+        //Choose pivot index, taking the random approach on this one
+        let pivotIndex = Math.floor(Math.random() * (input.length - 1));
+        let pivotValue = input[pivotIndex];
+        let smallerArray = []; //If the comparison is less than zero
+        let biggerArray = []; //Otherwise, the comparison is greater than or equal to zero
+        input.forEach((value: T, index: number) => {
+            if(index == pivotIndex){
+                return;
+            }
+
+            let comparison = comparitor(value, pivotValue);
+            if (comparison < 0){
+                smallerArray.push(value);
+            } else {
+                biggerArray.push(value);
+            }
+        })
+        
+        let sortedBiggerArray = Sort.QuickSort(biggerArray, comparitor);
+        let sortedSmallerArray = Sort.QuickSort(smallerArray, comparitor);
+        return sortedSmallerArray.concat([pivotValue]).concat(sortedBiggerArray);
+    }
+    
     public static MergeSort<T>(input:T[], comparitor:Comparitor<T>) : T[] {        
         function Merge(a: T[], b: T[]) : T[]{
             let newArray : T[] = [];
